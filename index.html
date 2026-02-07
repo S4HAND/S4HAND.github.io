@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rami Mohammed | Socials</title>
-    <meta name="description" content="Official profile of Rami Mohammed (ramiqaladzay).">
-    
-    <link rel="icon" type="image/png" href="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png">
+    <title>Rami Mohammed | Encrypted</title>
+    <meta name="description" content="Official profile of Rami Mohammed.">
 
+    <link rel="icon" type="image/png" href="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* --- 1. GLOBAL VARIABLES & RESET --- */
         :root {
-            --bg-dark: #050505;
-            --glass-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-main: #ffffff;
-            --text-muted: rgba(255, 255, 255, 0.6);
-            
-            /* Brand Colors */
-            --tiktok: #00f2ea;
-            --snapchat: #fffc00;
-            --instagram: #e1306c;
-            --facebook: #1877f2;
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --card-border: #333333;
+            --text-primary: #e0e0e0;
+            --text-secondary: #666666;
+            --accent-glow: rgba(255, 255, 255, 0.15);
+            --hacker-green: #33ff00; /* Used very subtly */
         }
 
         * {
@@ -36,214 +30,263 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            /* Added a subtle animated gradient background */
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(24, 119, 242, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(225, 48, 108, 0.15) 0%, transparent 40%);
-            font-family: 'Outfit', 'Noto Sans Arabic', sans-serif;
-            color: var(--text-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Space Mono', monospace; /* The "code" font */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* --- 2. PROFILE SECTION --- */
-        .profile-container {
-            text-align: center;
-            margin-bottom: 2rem;
-            animation: fadeInDown 1s ease-out;
+        /* --- THE SUBTLE HACKER BACKGROUND --- */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* Tiny scanlines pattern */
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* A moving "spotlight" fog */
+        body::after {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(40,40,40,0.1) 0%, rgba(5,5,5,1) 70%);
+            animation: drift 20s infinite linear;
+            pointer-events: none;
+            z-index: -1;
         }
 
+        @keyframes drift {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- PROFILE IMAGE --- */
+        .profile-wrapper {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
         .profile-img {
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(255,255,255,0.2);
-            padding: 4px;
-            margin-bottom: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
+            border: 2px solid #333;
+            padding: 3px;
+            background: #000;
+            filter: grayscale(100%); /* Makes the image B&W for the theme */
+            transition: all 0.5s ease;
+        }
+
+        /* Image glows slightly on hover */
+        .profile-wrapper:hover .profile-img {
+            filter: grayscale(0%);
+            border-color: #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- TYPING TEXT EFFECT --- */
+        .identity {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .name-glitch {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #fff;
+            border-right: 2px solid #fff; /* The cursor */
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.
+5s steps(30, end), blink-caret 0.75s step-end infinite;
+            display: inline-block;
         }
         
-        .profile-img:hover {
-            transform: scale(1.05);
-            border-color: var(--text-main);
-        }
-
-        .main-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .subtitle {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            color: var(--text-muted);
+        .role {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        /* --- 3. LINKS CONTAINER --- */
-        .links-wrapper {
-            width: 90%;
-            max-width: 400px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            perspective: 1000px; /* For 3D effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #fff }
         }
 
-        .link-card {
+        /* --- LINKS --- */
+        .links-stack {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cyber-link {
             position: relative;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 18px 25px;
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: var(--text-main);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            overflow: hidden; /* Keeps hover effects inside */
-            animation: fadeInUp 0.5s ease-out backwards;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            overflow: hidden;
         }
 
-        /* Staggered animation delay for each card */
-        .
-link-card:nth-child(1) { animation-delay: 0.1s; }
-        .link-card:nth-child(2) { animation-delay: 0.2s; }
-        .link-card:nth-child(3) { animation-delay: 0.3s; }
-        .link-card:nth-child(4) { animation-delay: 0.4s; }
-
-        .brand-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            object-fit: contain;
-            /* Invert colors if icons are black, otherwise leave normal */
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        .cyber-link:hover {
+            background: #1a1a1a;
+            border-color: #fff;
+            color: #fff;
+            transform: translateX(5px);
+            box-shadow: -5px 5px 0px rgba(30,30,30,0.5); /* Hard shadow */
         }
 
-        .link-text {
-            flex-grow: 1;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            z-index: 2; /* Keeps text above glow */
-        }
-
-        /* --- 4. HOVER EFFECTS --- */
-        .link-card::before {
+        /* Tiny corner accents for tech look */
+        .cyber-link::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-            z-index: 1;
+            top: 0; left: 0;
+            width: 0px; height: 0px;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            transition: 0.3s;
+        }
+        .cyber-link:hover::before {
+            width: 10px; height: 10px;
         }
 
-        .link-card:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        .icon-box {
+            width: 28px;
+            height: 28px;
+            margin-right: 15px;
+            filter: grayscale(100%) contrast(1.2); /* B&W Icons */
+            transition: 0.3s;
+        }
+        
+        .cyber-link:hover .icon-box {
+            filter: grayscale(0%); /* Reveal color on hover */
+            transform: scale(1.1);
         }
 
-        .link-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        /* Brand Specific Hovers */
-        .tiktok:hover { border-color: var(--tiktok); box-shadow: 0 0 20px rgba(0, 242, 234, 0.2); }
-        .snapchat:hover { border-color: var(--snapchat); box-shadow: 0 0 20px rgba(255, 252, 0, 0.2); }
-        .instagram:hover { border-color: var(--instagram); box-shadow: 0 0 20px rgba(225, 48, 108, 0.2); }
-        .facebook:hover { border-color: var(--facebook); box-shadow: 0 0 20px rgba(24, 119, 242, 0.2); }
-
-        /* --- 5. FOOTER --- */
-        .footer {
-            margin-top: 3rem;
-            text-align: center;
-            opacity: 0.8;
-            padding: 20px;
-            animation: fadeIn 1.5s ease;
-        }
-
-        .quote {
+        .link-title {
             font-size: 0.9rem;
-            margin-bottom: 8px;
-            font-family: 'Noto Sans Arabic', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            flex-grow: 1;
         }
 
-        .designer {
+        /* Optional: Data ID decoration */
+        .data-id {
             font-size: 0.6rem;
-            letter-spacing: 2px;
-            opacity: 0.4;
-            margin-top: 15px;
+            opacity: 0.3;
+            font-family: 'Space Mono', monospace;
         }
 
-        /* --- 6. ANIMATIONS --- */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            opacity: 0.5;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 480px) {
-            .links-wrapper { width: 92%; }
-            .main-title { font-size: 1.5rem; }
+        .kurdish-quote {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            color: #888;
+        }
+
+        .credits {
+            font-size: 0.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #444;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 400px) {
+            .name-glitch { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header class="profile-container">
-        <img src="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png" alt="Rami Profile" class="profile-img">
-        <h1 class="main-title">@ramiqaladzay</h1>
-        <p class="subtitle">Official Socials</p>
-    </header>
+    <div class="container">
+        
+        <div class="profile-wrapper">
+            <img src="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png" alt="User Avatar" class="profile-img">
+        </div>
 
-    <nav class="links-wrapper">
-        <a href="https://www.tiktok.com/@rx.ramiii" class="link-card tiktok" target="_blank" rel="noopener">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuJu4htpqrqU4_Yg4qoMqcl-kNT_4jLpGAiGPlxcvaow&s=10" class="brand-icon" alt="TikTok">
-            <span class="link-text">TIKTOK</span>
-        </a>
-        
-        <a href="https://snapchat.com/t/ZDtN0sxx" class="link-card snapchat" target="_blank" rel="noopener">
-            <img src="https://i.pinimg.com/474x/6f/4f/82/6f4f82da303ab2247088f61703f9d14c.jpg" class="brand-icon" alt="Snapchat">
-            <span class="link-text">SNAPCHAT</span>
-        </a>
-        
-        <a href="https://www.instagram.com/rx.ramii" class="link-card instagram" target="_blank" rel="noopener">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IbzdQdmceoJL_AxfrBUk2_pODFiCw9RFZyRuuvAl8w&s" class="brand-icon" alt="Instagram">
-            <span class="link-text">INSTAGRAM</span>
-        </a>
-        
-        <a href="https://www.facebook.com/share/1AfKryYh4z/" class="link-card facebook" target="_blank" rel="noopener">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS75o4JKpuvcPb3Vf1ZY22blcloQVWTGLskFc1vLrfwEQ&s=10" class="brand-icon" alt="Facebook">
-            <span class="link-text">FACEBOOK</span>
-        </a>
-    </nav>
+        <div class="identity">
+            <h1 class="name-glitch">ramiqaladzay_</h1>
+            <span class="role">System Online</span>
+        </div>
 
-    <footer class="footer">
-        <p class="quote">خوات بەسە لەهەموو بارودۆخێکدا •</p>
-        <p class="designer">DESIGNED AND DEVELOPED BY RAMI</p>
-    </footer>
+        <nav class="links-stack">
+            <a href="https://www.tiktok.com/@rx.ramiii" class="cyber-link" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuJu4htpqrqU4_Yg4qoMqcl-kNT_4jLpGAiGPlxcvaow&s=10" class="icon-box" alt="TikTok">
+                <span class="link-title">TIKTOK</span>
+                <span class="data-id">01</span>
+            </a>
+
+            <a href="https://snapchat.com/t/ZDtN0sxx" class="cyber-link" target="_blank">
+                <img src="https://i.pinimg.
+com/474x/6f/4f/82/6f4f82da303ab2247088f61703f9d14c.jpg" class="icon-box" alt="Snapchat">
+                <span class="link-title">SNAPCHAT</span>
+                <span class="data-id">02</span>
+            </a>
+
+            <a href="https://www.instagram.com/rx.ramii" class="cyber-link" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IbzdQdmceoJL_AxfrBUk2_pODFiCw9RFZyRuuvAl8w&s" class="icon-box" alt="Instagram">
+                <span class="link-title">INSTAGRAM</span>
+                <span class="data-id">03</span>
+            </a>
+
+            <a href="https://www.facebook.com/share/1AfKryYh4z/" class="cyber-link" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS75o4JKpuvcPb3Vf1ZY22blcloQVWTGLskFc1vLrfwEQ&s=10" class="icon-box" alt="Facebook">
+                <span class="link-title">FACEBOOK</span>
+                <span class="data-id">04</span>
+            </a>
+        </nav>
+
+        <footer>
+            <p class="kurdish-quote">خوات بەسە لەهەموو بارودۆخێکدا •</p>
+            <p class="credits">SECURE CONNECTION ESTABLISHED</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
