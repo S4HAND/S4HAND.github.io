@@ -2,291 +2,283 @@
 <html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rami Mohammed | Encrypted</title>
-    <meta name="description" content="Official profile of Rami Mohammed.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="google-site-verification" content="googleeb1098d78b104bd7" />
+
+    <title>Sahand_Samad - Social Hub</title>
+    <meta name="description" content="Official profile of Sahand Samad (Xeno). Follow me on TikTok, Instagram, Snapchat, and Facebook.">
 
     <link rel="icon" type="image/png" href="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png">
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png">
+    <link rel="shortcut icon" href="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="sahand_samad">
+    <meta property="og:description" content="Official Social Media Links">
+    <meta property="og:image" content="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png">
+    <meta property="og:url" content="https://ramiqaladzay0.netlify.app/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-color: #050505;
-            --card-bg: #111111;
-            --card-border: #333333;
-            --text-primary: #e0e0e0;
-            --text-secondary: #666666;
-            --accent-glow: rgba(255, 255, 255, 0.15);
-            --hacker-green: #33ff00; /* Used very subtly */
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --color-bg-main: #050505;
+            --color-bg-secondary: #0a0a0a;
+            --color-card-bg: #111111;
+            --color-text-primary: #e0e0e0;
+            --color-text-secondary: #a0a0a0;
+            --color-accent-tiktok: #00f2ea;
+            --color-accent-snapchat: #fffc00;
+            --color-accent-instagram: #e1306c;
+            --color-accent-facebook: #1877f2;
+            --color-border-glow: rgba(255, 255, 255, 0.05);
+            --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            --font-main: 'Rajdhani', sans-serif;
+            --font-arabic: 'Noto Sans Arabic', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Space Mono', monospace; /* The "code" font */
-            min-height: 100vh;
+            background-color: var(--color-bg-main);
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 0.3) 0%, rgba(5, 5, 5, 0.8) 100%),
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrXMhMUUYQsl9tIWAXrhiQycp-if5DZuGIKNvTLBmYFw&s=10');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: var(--font-main), var(--font-arabic);
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--color-text-primary);
             overflow-x: hidden;
-            position: relative;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- THE SUBTLE HACKER BACKGROUND --- */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            /* Tiny scanlines pattern */
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-            z-index: 0;
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border-radius: 24px;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-card), inset 0 0 2px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            contain: content;
+            animation: fadeIn 1s ease-out;
         }
-        
-        /* A moving "spotlight" fog */
-        body::after {
-            content: "";
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--color-text-primary);
+            text-transform: uppercase;
+letter-spacing: 2px;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+            background: linear-gradient(to right, #fff, #b0b0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .follow-text {
+            font-size: 0.85rem;
+            letter-spacing: 6px;
+            color: var(--color-text-secondary);
+            margin-bottom: 45px;
+            font-weight: 500;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .link-card {
+            background: var(--color-card-bg);
+            padding: 16px 25px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--color-text-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid var(--color-border-glow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .link-card::before {
+            content: '';
             position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(40,40,40,0.1) 0%, rgba(5,5,5,1) 70%);
-            animation: drift 20s infinite linear;
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
             z-index: -1;
         }
 
-        @keyframes drift {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .link-card:hover::before {
+            transform: translateX(100%);
         }
 
-        /* --- LAYOUT --- */
-        .container {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            max-width: 420px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .link-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
         }
 
-        /* --- PROFILE IMAGE --- */
-        .profile-wrapper {
-            position: relative;
-            margin-bottom: 25px;
+        .tiktok:hover {
+            border-color: var(--color-accent-tiktok);
+            box-shadow: 0 0 25px rgba(0, 242, 234, 0.3), inset 0 0 10px rgba(0, 242, 234, 0.1);
         }
-        
-        .profile-img {
-            width: 90px;
-            height: 90px;
+        .snapchat:hover {
+            border-color: var(--color-accent-snapchat);
+            box-shadow: 0 0 25px rgba(255, 252, 0, 0.3), inset 0 0 10px rgba(255, 252, 0, 0.1);
+        }
+        .instagram:hover {
+            border-color: var(--color-accent-instagram);
+            box-shadow: 0 0 25px rgba(225, 48, 108, 0.3), inset 0 0 10px rgba(225, 48, 108, 0.1);
+        }
+        .facebook:hover {
+            border-color: var(--color-accent-facebook);
+            box-shadow: 0 0 25px rgba(24, 119, 242, 0.3), inset 0 0 10px rgba(24, 119, 242, 0.1);
+        }
+
+        .brand-logo {
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            border: 2px solid #333;
-            padding: 3px;
-            background: #000;
-            filter: grayscale(100%); /* Makes the image B&W for the theme */
-            transition: all 0.5s ease;
+            flex-shrink: 0;
+            aspect-ratio: 1/1;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
         }
 
-        /* Image glows slightly on hover */
-        .profile-wrapper:hover .profile-img {
-            filter: grayscale(0%);
-            border-color: #fff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        .link-card:hover .brand-logo {
+            transform: scale(1.1) rotate(5deg);
         }
 
-        /* --- TYPING TEXT EFFECT --- */
-        .identity {
+        .link-text {
+            flex-grow: 1;
             text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .name-glitch {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            color: #fff;
-            border-right: 2px solid #fff; /* The cursor */
-            white-space: nowrap;
-            overflow: hidden;
-            animation: typing 3.
-5s steps(30, end), blink-caret 0.75s step-end infinite;
-            display: inline-block;
-        }
-        
-        .role {
-            display: block;
-            margin-top: 5px;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
+            padding-left: 15px;
+            font-size: 1.1rem;
             letter-spacing: 2px;
+            font-weight: 600;
             text-transform: uppercase;
         }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #fff }
-        }
-
-        /* --- LINKS --- */
-        .links-stack {
-            width: 100%;
+        .footer {
+            margin-top: 60px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
-            gap: 15px;
-        }
-
-        .cyber-link {
-            position: relative;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 18px 25px;
-            display: flex;
             align-items: center;
-            text-decoration: none;
-            color: var(--text-secondary);
-            transition: all 0.3s ease;
-            overflow: hidden;
+            gap: 12px;
         }
 
-        .cyber-link:hover {
-            background: #1a1a1a;
-            border-color: #fff;
-            color: #fff;
-            transform: translateX(5px);
-            box-shadow: -5px 5px 0px rgba(30,30,30,0.5); /* Hard shadow */
+        .quote {
+            font-family: var(--font-arabic);
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            opacity: 0.9;
+            font-weight: 400;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
 
-        /* Tiny corner accents for tech look */
-        .cyber-link::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 0px; height: 0px;
-            border-top: 2px solid #fff;
-            border-left: 2px solid #fff;
-            transition: 0.3s;
-        }
-        .cyber-link:hover::before {
-            width: 10px; height: 10px;
-        }
-
-        .icon-box {
-            width: 28px;
-            height: 28px;
-            margin-right: 15px;
-            filter: grayscale(100%) contrast(1.2); /* B&W Icons */
-            transition: 0.3s;
-        }
-        
-        .cyber-link:hover .icon-box {
-            filter: grayscale(0%); /* Reveal color on hover */
-            transform: scale(1.1);
-        }
-
-        .link-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            flex-grow: 1;
-        }
-
-        /* Optional: Data ID decoration */
-        .data-id {
+        .designer {
             font-size: 0.6rem;
-            opacity: 0.3;
-            font-family: 'Space Mono', monospace;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            opacity: 0.5;
-        }
-
-        .kurdish-quote {
-            font-family: 'Noto Sans Arabic', sans-serif;
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-            color: #888;
-        }
-
-        .credits {
-            font-size: 0.5rem;
             letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #444;
+            color: var(--color-text-secondary);
+            opacity: 0.5;
+            margin-top: 5px;
+            font-weight: 500;
         }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 400px) {
-            .name-glitch { font-size: 1.2rem; }
+        @media (max-width: 480px) {
+            .container {
+                width: 85%;
+padding: 30px 20px;
+            }
+            .main-title {
+                font-size: 2rem;
+            }
+            .follow-text {
+                font-size: 0.75rem;
+                letter-spacing: 4px;
+            }
+            .link-card {
+                padding: 14px 20px;
+            }
+            .brand-logo {
+                width: 28px;
+                height: 28px;
+            }
+            .link-text {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+<main class="container">
+    <h1 class="main-title">My Social Media</h1>
+    <p class="follow-text">FOLLOW ME</p>
+
+    <nav class="links-wrapper">
+        <a href="https://www.tiktok.com/@161_2894" class="link-card tiktok" target="_blank" rel="noopener">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuJu4htpqrqU4_Yg4qoMqcl-kNT_4jLpGAiGPlxcvaow&s=10" class="brand-logo" alt="TikTok" width="32" height="32">
+            <span class="link-text">TIKTOK</span>
+        </a>
         
-        <div class="profile-wrapper">
-            <img src="https://ramiqaladzay0.netlify.app/C240F28D-CAFC-4D8A-8E1D-CC11347D3A05.png" alt="User Avatar" class="profile-img">
-        </div>
+        <a href="https://snapchat.com/t/DpFoirTd" class="link-card snapchat" target="_blank" rel="noopener">
+     
+            <img src="https://i.pinimg.com/474x/6f/4f/82/6f4f82da303ab2247088f61703f9d14c.jpg" class="brand-logo" alt="Snapchat" width="32" height="32">
+            <span class="link-text">SNAPCHAT</span>
+        </a>
+        
+        <a href="https://www.instagram.com/Dr.xenooo" class="link-card instagram" target="_blank" rel="noopener">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IbzdQdmceoJL_AxfrBUk2_pODFiCw9RFZyRuuvAl8w&s" class="brand-logo" alt="Instagram" width="32" height="32">
+            <span class="link-text">INSTAGRAM</span>
+        </a>
+        
+ 
+        <a href="https://www.facebook.com/share/186kjnmLGx" class="link-card facebook" target="_blank" rel="noopener">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS75o4JKpuvcPb3Vf1ZY22blcloQVWTGLskFc1vLrfwEQ&s=10" class="brand-logo" alt="Facebook" width="32" height="32">
+            <span class="link-text">FACEBOOK</span>
+        </a>
+    </nav>
 
-        <div class="identity">
-            <h1 class="name-glitch">ramiqaladzay_</h1>
-            <span class="role">System Online</span>
-        </div>
-
-        <nav class="links-stack">
-            <a href="https://www.tiktok.com/@rx.ramiii" class="cyber-link" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuJu4htpqrqU4_Yg4qoMqcl-kNT_4jLpGAiGPlxcvaow&s=10" class="icon-box" alt="TikTok">
-                <span class="link-title">TIKTOK</span>
-                <span class="data-id">01</span>
-            </a>
-
-            <a href="https://snapchat.com/t/ZDtN0sxx" class="cyber-link" target="_blank">
-                <img src="https://i.pinimg.
-com/474x/6f/4f/82/6f4f82da303ab2247088f61703f9d14c.jpg" class="icon-box" alt="Snapchat">
-                <span class="link-title">SNAPCHAT</span>
-                <span class="data-id">02</span>
-            </a>
-
-            <a href="https://www.instagram.com/rx.ramii" class="cyber-link" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IbzdQdmceoJL_AxfrBUk2_pODFiCw9RFZyRuuvAl8w&s" class="icon-box" alt="Instagram">
-                <span class="link-title">INSTAGRAM</span>
-                <span class="data-id">03</span>
-            </a>
-
-            <a href="https://www.facebook.com/share/1AfKryYh4z/" class="cyber-link" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS75o4JKpuvcPb3Vf1ZY22blcloQVWTGLskFc1vLrfwEQ&s=10" class="icon-box" alt="Facebook">
-                <span class="link-title">FACEBOOK</span>
-                <span class="data-id">04</span>
-            </a>
-        </nav>
-
-        <footer>
-            <p class="kurdish-quote">خوات بەسە لەهەموو بارودۆخێکدا •</p>
-            <p class="credits">SECURE CONNECTION ESTABLISHED</p>
-        </footer>
-
-    </div>
+    <footer class="footer">
+        <p class="quote">The sun will rise again •</p>
+        <p class="designer">DESIGNED AND DEVELOPED BY S4hand</p>
+    </footer>
+</main>
 
 </body>
 </html>
